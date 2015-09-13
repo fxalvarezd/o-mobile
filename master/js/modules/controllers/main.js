@@ -4,21 +4,19 @@
  =========================================================*/
 
 App.controller('AppController',
-    ['$rootScope', '$scope', '$state', '$window', '$timeout', 'colors', 'browser', 'cfpLoadingBar',
-    function($rootScope, $scope, $state, $window, $timeout, colors, browser, cfpLoadingBar) {
+    ['$rootScope', '$scope', '$state', '$window', '$timeout', 'cfpLoadingBar',
+    function($rootScope, $scope, $state, $window, $timeout, cfpLoadingBar) {
         "use strict";
-
-        // Setup the layout mode
-        $rootScope.app.layout.horizontal = ( $rootScope.$stateParams.layout == 'app-h') ;
 
         // Loading bar transition
         // ----------------------------------- 
         var thBar;
         $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {
-                if($('.wrapper > section').length) // check if bar container exists
+                if($('.wrapper > section').length) { // check if bar container exists
                     thBar = $timeout(function() {
                         cfpLoadingBar.start();
                     }, 0); // sets a latency Threshold
+                }
         });
         $rootScope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {
                 event.targetScope.$watch("$viewContentLoaded", function () {
@@ -48,7 +46,8 @@ App.controller('AppController',
                 $window.scrollTo(0, 0);
                 // Save the route title
                 $rootScope.currTitle = $state.current.title;
-            });
+            }
+        );
 
         $rootScope.currTitle = $state.current.title;
         $rootScope.pageTitle = function() {
@@ -56,16 +55,6 @@ App.controller('AppController',
             document.title = title;
             return title; 
         };
-
-        // Close submenu when sidebar change from collapsed to normal
-        $rootScope.$watch('app.layout.isCollapsed', function(newValue, oldValue) {
-            if( newValue === false )
-                $rootScope.$broadcast('closeSidebarMenu');
-        });
-        
-        // Allows to use branding color with interpolation
-        // {{ colorByName('primary') }}
-        $scope.colorByName = colors.byName;
 
         // cancel click event easily
         $rootScope.cancel = function($event) {

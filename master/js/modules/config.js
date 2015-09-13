@@ -12,23 +12,22 @@ function ($stateProvider, $locationProvider, $urlRouterProvider, helper) {
     $locationProvider.html5Mode(false);
 
     // default route
-    $urlRouterProvider.otherwise('/app/singleview');
+    $urlRouterProvider.otherwise('/homepage');
 
     // 
     // Application Routes
     // -----------------------------------   
     $stateProvider
         .state('app', {
-                url: '/app',
                 abstract: true,
                 templateUrl: helper.basepath('app.html'),
                 controller: 'AppController',
                 resolve: helper.resolveFor('modernizr', 'icons')
         })
-        .state('app.singleview', {
-                url: '/singleview',
-                title: 'Single View',
-                templateUrl: helper.basepath('singleview.html')
+        .state('app.homepage', {
+                url: '/homepage',
+                title: 'Oshyn Inc.',
+                templateUrl: helper.basepath('homepage.html')
         })
         .state('app.submenu', {
                 url: '/submenu',
@@ -47,7 +46,6 @@ function ($stateProvider, $locationProvider, $urlRouterProvider, helper) {
 }]).config(['$controllerProvider', '$compileProvider', '$filterProvider', '$provide',
         function ( $controllerProvider, $compileProvider, $filterProvider, $provide) {
             'use strict';
-            // registering components after bootstrap
             App.controller = $controllerProvider.register;
             App.directive  = $compileProvider.directive;
             App.filter     = $filterProvider.register;
@@ -60,7 +58,5 @@ function ($stateProvider, $locationProvider, $urlRouterProvider, helper) {
         cfpLoadingBarProvider.includeSpinner = false;
         cfpLoadingBarProvider.latencyThreshold = 500;
         cfpLoadingBarProvider.parentSelector = '.wrapper > section';
-}]).config(['$tooltipProvider', function ($tooltipProvider) {
-        $tooltipProvider.options({appendToBody: true});
 }])
 ;

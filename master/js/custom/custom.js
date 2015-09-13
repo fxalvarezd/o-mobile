@@ -1,10 +1,10 @@
 // To run this code, edit file 
 // index.html or index.jade and change
 // html data-ng-app attribute from
-// angle to myAppName
+// oshyn to myAppName
 // ----------------------------------- 
 
-var myApp = angular.module('myAppName', ['angle']);
+var myApp = angular.module('myAppName', ['oshyn']);
 
 myApp.run(["$log", function($log) {
 

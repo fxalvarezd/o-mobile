@@ -68,8 +68,7 @@ var source = {
     },
     styles: {
         app:    [ paths.styles + '*.*'],
-        themes: [ paths.styles + 'themes/*'],
-        watch:  [ paths.styles + '**/*', '!'+paths.styles+'themes/*']
+        watch:  [ paths.styles + '**/*']
     }
 };
 
@@ -101,13 +100,6 @@ var compassOpts = {
     project: path.join(__dirname, '../'),
     css: 'app/css',
     sass: 'master/sass/',
-    image: 'app/img'
-};
-
-var compassOptsThemes = {
-    project: path.join(__dirname, '../'),
-    css: 'app/css',
-    sass: 'master/sass/themes/', // themes in a subfolders
     image: 'app/img'
 };
 
@@ -179,15 +171,6 @@ gulp.task('styles:app', function() {
                 .pipe(gulp.dest(build.styles));
 });
 
-// LESS THEMES
-gulp.task('styles:themes', function() {
-        log('Building application theme styles..');
-        return gulp.src(source.styles.themes)
-                .pipe( useSass ? $.compass(compassOptsThemes) : $.less() )
-                .on('error', handleError)
-                .pipe(gulp.dest(build.styles));
-});
-
 // JADE
 gulp.task('templates:index', function() {
         log('Building index..');
@@ -224,7 +207,6 @@ gulp.task('watch', function() {
 
     gulp.watch(source.scripts,         ['scripts:app']);
     gulp.watch(source.styles.watch,    ['styles:app']);
-    gulp.watch(source.styles.themes,   ['styles:themes']);
     gulp.watch(source.templates.views, ['templates:views']);
     gulp.watch(source.templates.index, ['templates:index']);
 
@@ -234,7 +216,6 @@ gulp.task('watch', function() {
     var watchSource = [].concat(
             source.scripts,
             source.styles.watch,
-            source.styles.themes,
             source.templates.views,
             source.templates.index
         );
@@ -285,7 +266,6 @@ gulp.task('default', gulpsync.sync([
 gulp.task('assets',[
                     'scripts:app',
                     'styles:app',
-                    'styles:themes',
                     'templates:index',
                     'templates:views'
                 ]);
