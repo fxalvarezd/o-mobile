@@ -1,3 +1,7 @@
 # Ignore
 **/node_modules/
 **/bower_components/
+**/app/css/
+**/app/js/
+**/app/views/
+**/vendor/
