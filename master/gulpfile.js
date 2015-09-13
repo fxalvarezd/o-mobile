@@ -1,10 +1,10 @@
 var args        = require('yargs').argv,
-        path        = require('path'),
-        through     = require('through2'),
-        gulp        = require('gulp'),
-        $           = require('gulp-load-plugins')(),
-        gulpsync    = $.sync(gulp),
-        PluginError = $.util.PluginError;
+    path        = require('path'),
+    through     = require('through2'),
+    gulp        = require('gulp'),
+    $           = require('gulp-load-plugins')(),
+    gulpsync    = $.sync(gulp),
+    PluginError = $.util.PluginError;
 
 // production mode (see build task)
 var isProduction = false;
@@ -14,7 +14,8 @@ var useSourceMaps = false;
 // Switch to sass mode. 
 // Example:
 //    gulp --usesass
-var useSass = args.usesass;
+//var useSass = args.usesass;
+var useSass = true;
 
 // ignore everything that begins with underscore
 var hidden_files = '**/_*.*';
