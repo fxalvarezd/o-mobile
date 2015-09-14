@@ -24,16 +24,31 @@
     .banner {
         bottom: 50px;
         left: 0;
+        max-width: 320px;
+        padding-left: 74px;
         position: absolute;
+
+        @media screen and (max-height: 600px) {
+            bottom: auto;
+            left: auto;
+            margin-top: $margin-xl;
+            position: relative;
+        }
     }
+        .img {
+            left: 0;
+            position: absolute;
+            top: 0;
+        }
         .info {
             background-color: #3c8aaa;
+            overflow: hidden;
             padding: 5px 10px 4px;
-            width: 270px;
+            max-width: 270px;
 
             span {
                 float: left;
-                font-size: 18px;
+                font-size: 16px;
                 line-height: 20px;
             }
             .more {
