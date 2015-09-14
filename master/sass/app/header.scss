@@ -1,0 +1,16 @@
+.header {
+	background: $brand-primary;
+	padding: $padding-base $padding-lg;
+
+	.logo {
+		display: block;
+	}
+		.img {
+			display: block;
+		}
+	.menu-trigger {
+		color: #fff;
+		font-size: 30px;
+		line-height: 36px;
+	}
+}

@@ -1,0 +1,87 @@
+/* General styles for all menus */
+
+/****************************************/
+// VARS
+$spmenu-vertical-width: 320px;
+/****************************************/
+
+.spmenu {
+    background: $brand-primary;
+    position: fixed;
+
+    &.spmenu-open {
+        -moz-box-shadow: 1px 0px 10px $gray-darker;
+        -webkit-box-shadow: 1px 0px 10px $gray-darker;
+        box-shadow: 1px 0px 10px $gray-darker;
+    }
+}
+.spmenu-vertical {
+    width: $spmenu-vertical-width;
+    height: 100%;
+    top: 0;
+    z-index: 1000;
+    a, label {
+        padding: 0;
+    }
+}
+.spmenu-left {
+    left: -$spmenu-vertical-width;
+    border-right: 1px solid $border-color;
+}
+
+/* Push classes applied to the body */
+.spmenu-push {
+    overflow-x: hidden;
+    position: relative;
+    left: 0;
+}
+.spmenu-push-toright {
+    left: $spmenu-vertical-width;
+}
+.spmenu-push-toleft {
+    left: -$spmenu-vertical-width;
+}
+
+/* Transitions */
+.spmenu, .spmenu-push {
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+/* Custom Styling */
+.sidebar {
+    .logo-wrap {
+        background: url(../img/dot-border.png) repeat-x left bottom transparent;
+    }
+    .main-menu {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+        .item {
+
+            &.active,
+            &:hover,
+            &:active {
+                background: $gray-light;
+            }
+        }
+        .link {
+            color: #fff;
+            display: block;
+            font-size: 24px;
+            padding: $padding-base $padding-lg;
+            text-transform: uppercase;
+        }
+    .copy {
+        bottom: 0;
+        color: #fff;
+        font-size: 11px;
+        font-weight: 300;
+        left: 0;
+        padding: $padding-xl $padding-lg;
+        position: absolute;
+        right: 0;
+    }
+}
