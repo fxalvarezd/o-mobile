@@ -29,10 +29,35 @@ function ($stateProvider, $locationProvider, $urlRouterProvider, helper) {
                 title: 'Oshyn Inc.',
                 templateUrl: helper.basepath('homepage.html')
         })
-        .state('app.submenu', {
-                url: '/submenu',
-                title: 'Submenu',
-                templateUrl: helper.basepath('submenu.html')
+        .state('app.services', {
+                url: '/services',
+                title: 'Services',
+                templateUrl: helper.basepath('services.html')
+        })
+        .state('app.portfolio', {
+                url: '/portfolio',
+                title: 'Portfolio',
+                templateUrl: helper.basepath('portfolio.html')
+        })
+        .state('app.resources', {
+                url: '/resources',
+                title: 'Resources',
+                templateUrl: helper.basepath('resources.html')
+        })
+        .state('app.partners', {
+                url: '/partners',
+                title: 'Partners',
+                templateUrl: helper.basepath('partners.html')
+        })
+        .state('app.who', {
+                url: '/who',
+                title: 'Who We Are',
+                templateUrl: helper.basepath('who.html')
+        })
+        .state('app.contact', {
+                url: '/contact',
+                title: 'Contact',
+                templateUrl: helper.basepath('contact.html')
         })
         ;
 }]).config(['$ocLazyLoadProvider', 'APP_REQUIRES', function ($ocLazyLoadProvider, APP_REQUIRES) {

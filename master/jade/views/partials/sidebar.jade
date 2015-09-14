@@ -1,0 +1,19 @@
+ng-slide-push-menu.sidebar#sidebar(position="left")
+    .logo-wrap.p.mb-lg
+        img.img(src="app/img/logo.png", alt="Oshyn", height="66", width="156")
+    ul.main-menu
+        li.item(ui-sref-active='active')
+            a.link(ui-sref="app.homepage") MAIN
+        li.item(ui-sref-active='active')
+            a.link(ui-sref="app.services") SERVICES
+        li.item(ui-sref-active='active')
+            a.link(ui-sref="app.portfolio") PORTFOLIO
+        li.item(ui-sref-active='active')
+            a.link(ui-sref="app.resources") RESOURCES
+        li.item(ui-sref-active='active')
+            a.link(ui-sref="app.partners") PARTNERS
+        li.item(ui-sref-active='active')
+            a.link(ui-sref="app.who") WHO WE ARE
+        li.item(ui-sref-active='active')
+            a.link(ui-sref="app.contact") CONTACT
+    .copy &copy; {{app.year}} COPYRIGHT {{ app.name }}

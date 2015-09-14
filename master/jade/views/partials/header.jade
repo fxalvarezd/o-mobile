@@ -4,23 +4,4 @@
     .right.menu-trigger
         .fa.fa-bars(ng-push-menu="sidebar")
 
-ng-slide-push-menu.sidebar#sidebar(position="left")
-    .logo-wrap.p.mb-lg
-        img.img(src="app/img/logo.png", alt="Oshyn", height="66", width="156")
-    ul.main-menu
-        li.item.active
-            a.link(ui-sref="app.homepage") MAIN
-        li.item
-            a.link(ui-sref="app.homepage") SERVICES
-        li.item
-            a.link(ui-sref="app.homepage") PORTFOLIO
-        li.item
-            a.link(ui-sref="app.homepage") RESOURCES
-        li.item
-            a.link(ui-sref="app.homepage") PARTNERS
-        li.item
-            a.link(ui-sref="app.homepage") WHO WE ARE
-        li.item
-            a.link(ui-sref="app.homepage") CONTACT
-    .copy
-        &copy; 2015 COPYRIGHT OSHYN.
+include sidebar
