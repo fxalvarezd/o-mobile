@@ -1,6 +1,6 @@
 // Header
-header(ng-include="'app/views/partials/header.html'")
+header.header-container(ng-include="'app/views/partials/header.html'")
 
 // Page content
-section
+section.main-container
   .content-wrapper(ui-view="", autoscroll="false", ng-class="app.viewAnimation")

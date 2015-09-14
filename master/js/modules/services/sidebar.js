@@ -183,6 +183,8 @@ App.factory('slidePush',function () {
             return link;
         };
         link = function (scope, elem, attrs) {
+            console.log('elem');
+            console.log(elem);
             return link.transclude(scope, function (clone) {
                 var body, btn, buttonClass, buttonText, classes, positionFix;
                 classes = (attrs.spmClass ? attrs.spmClass : "");

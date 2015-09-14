@@ -1,0 +1,44 @@
+.homepage {
+    background-color: transparent;
+    background-size: cover;
+    background-image: url(../img/home-bg.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    color: #fff;
+    height: 100%;
+
+    .main-title {
+        color: #fff;
+        font-size: 54px;
+        line-height: 1;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+    .sub-title {
+        color: #fff;
+        font-size: 30px;
+        line-height: 1.1;
+        font-weight: 300;
+        text-transform: uppercase;
+    }
+    .banner {
+        bottom: 50px;
+        left: 0;
+        position: absolute;
+    }
+        .info {
+            background-color: #3c8aaa;
+            padding: 5px 10px 4px;
+            width: 270px;
+
+            span {
+                float: left;
+                font-size: 18px;
+                line-height: 20px;
+            }
+            .more {
+                font-size: 13px;
+                text-transform: uppercase;
+            }
+        }
+}

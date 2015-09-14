@@ -4,8 +4,8 @@
  =========================================================*/
 
 App.controller('AppController',
-    ['$rootScope', '$scope', '$state', '$window', '$timeout', 'cfpLoadingBar',
-    function($rootScope, $scope, $state, $window, $timeout, cfpLoadingBar) {
+    ['$rootScope', '$scope', '$state', '$window', '$timeout', 'cfpLoadingBar', 'slidePush',
+    function($rootScope, $scope, $state, $window, $timeout, cfpLoadingBar, slidePush) {
         "use strict";
 
         // Loading bar transition
@@ -19,10 +19,14 @@ App.controller('AppController',
                 }
         });
         $rootScope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {
+            var sidebar = $(document).find("#sidebar"),
+                btn = sidebar.find(".spmenu-button");
+
                 event.targetScope.$watch("$viewContentLoaded", function () {
                     $timeout.cancel(thBar);
                     cfpLoadingBar.complete();
                 });
+                slidePush.pushForceClose(sidebar, btn);
         });
 
         // Hook not found

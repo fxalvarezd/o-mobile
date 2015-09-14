@@ -1,14 +1,3 @@
-/* ========================================================================
-   Component: loading-bar
-  ========================================================================== */
-
-/*
- * angular-loading-bar v0.6.0 * https://chieffancypants.github.io/angular-loading-bar
- * Copyright (c) 2014 Wes Cruver * License: MIT
- */
-
-
-$loading-bar-bg:        #23b7e5;
 $loading-bar-hg:        3px;
 
 #loading-bar {
@@ -53,7 +42,7 @@ $loading-bar-hg:        3px;
   -o-transition: width 350ms;
   transition: width 350ms;
 
-  background: $loading-bar-bg;
+  background: $loadingbar;
   border-bottom-right-radius: 1px;
   border-top-right-radius: 1px;
 }
@@ -66,10 +55,10 @@ $loading-bar-hg:        3px;
   top: 0;
   height: 2px;
   opacity: .45;
-  -moz-box-shadow: $loading-bar-bg 1px 0 6px 1px;
-  -ms-box-shadow: $loading-bar-bg 1px 0 6px 1px;
-  -webkit-box-shadow: $loading-bar-bg 1px 0 6px 1px;
-  box-shadow: $loading-bar-bg 1px 0 6px 1px;
+  -moz-box-shadow: $loadingbar 1px 0 6px 1px;
+  -ms-box-shadow: $loadingbar 1px 0 6px 1px;
+  -webkit-box-shadow: $loadingbar 1px 0 6px 1px;
+  box-shadow: $loadingbar 1px 0 6px 1px;
   -moz-border-radius: 100%;
   -webkit-border-radius: 100%;
   border-radius: 100%;
@@ -88,8 +77,8 @@ $loading-bar-hg:        3px;
   height: 14px;
 
   border:  solid 2px transparent;
-  border-top-color:  $loading-bar-bg;
-  border-left-color: $loading-bar-bg;
+  border-top-color:  $loadingbar;
+  border-left-color: $loadingbar;
   border-radius: 10px;
 
   -webkit-animation: loading-bar-spinner 400ms linear infinite;
