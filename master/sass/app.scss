@@ -6,8 +6,9 @@
 @import "app/utils-definitions";
 @import "app/utils";
 
-// Layout
+// Global Styles
 @import "app/layout";
+@import "app/global";
 
 // Components
 @import "app/header";
@@ -17,3 +18,4 @@
 
 // Pages
 @import "app/pages/homepage";
+@import "app/pages/services";

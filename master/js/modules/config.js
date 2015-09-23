@@ -14,7 +14,7 @@ function ($stateProvider, $locationProvider, $urlRouterProvider, helper) {
     // default route
     $urlRouterProvider.otherwise('/homepage');
 
-    // 
+    // -----------------------------------   
     // Application Routes
     // -----------------------------------   
     $stateProvider
@@ -24,39 +24,69 @@ function ($stateProvider, $locationProvider, $urlRouterProvider, helper) {
                 controller: 'AppController',
                 resolve: helper.resolveFor('modernizr', 'icons')
         })
+        // -----------------------------------
+        // Homepage
+        // -----------------------------------
         .state('app.homepage', {
                 url: '/homepage',
                 title: 'Oshyn Inc.',
                 templateUrl: helper.basepath('homepage.html')
         })
+        // -----------------------------------
+        // Services
+        // -----------------------------------
         .state('app.services', {
-                url: '/services',
-                title: 'Services',
+                abstract: true,
                 templateUrl: helper.basepath('services.html')
         })
+        .state('app.services.video', {
+                url: '/services',
+                title: 'Services',
+                templateUrl: helper.basepath('partials/services-video.html')
+        })
+        .state('app.services.main', {
+                url: '/services',
+                title: 'Services',
+                templateUrl: helper.basepath('partials/services-menu.html')
+        })
+        // -----------------------------------
+        // Portfolio
+        // -----------------------------------
         .state('app.portfolio', {
                 url: '/portfolio',
                 title: 'Portfolio',
                 templateUrl: helper.basepath('portfolio.html')
         })
+        // -----------------------------------
+        // Resources
+        // -----------------------------------
         .state('app.resources', {
                 url: '/resources',
                 title: 'Resources',
                 templateUrl: helper.basepath('resources.html')
         })
+        // -----------------------------------
+        // Partners
+        // -----------------------------------
         .state('app.partners', {
                 url: '/partners',
                 title: 'Partners',
                 templateUrl: helper.basepath('partners.html')
         })
+        // -----------------------------------
+        // Who We Are
+        // -----------------------------------
         .state('app.who', {
                 url: '/who',
                 title: 'Who We Are',
                 templateUrl: helper.basepath('who.html')
         })
+        // -----------------------------------
+        // Contact Us
+        // -----------------------------------
         .state('app.contact', {
                 url: '/contact',
-                title: 'Contact',
+                title: 'Contact Us',
                 templateUrl: helper.basepath('contact.html')
         })
         ;
