@@ -1,20 +1,59 @@
+img {
+    display: block;
+    max-width: 100%;
+
+    &.img-responsive {
+        width: 100%;
+    }
+}
 .page-heading {
     padding: $padding-lg;
     position: relative;
 
+    &.close-section {
+        padding-right: 60px;
+    }
+    .close {
+        border: 1px solid $title-color;
+        color: $title-color;
+        cursor: pointer;
+        font-family: Arial;
+        font-size: 40px;
+        height: 40px;
+        line-height: 40px;
+        position: absolute;
+        right: $padding-lg;
+        text-align: center;
+        top: $padding-lg;
+        width: 40px;
+
+        &:hover {
+            opacity: 0.7;
+        }
+    }
     .title {
+        word-break: break-word;
         color: $title-color;
         font-size: 44px;
         font-weight: bold;
-        line-height: 1;
+        line-height: 36px;
         margin: 0 0 $margin-base 0;
         text-transform: uppercase;
     }
     .subtitle {
         color: $subtitle-color;
         font-size: 22px;
+        font-weight: normal;
         line-height: 1;
-        margin: 0 0 $margin-lg 0;
+        margin: 0;
         text-transform: uppercase;
     }
+}
+.content-title {
+    color: $subtitle-color;
+    font-size: 36px;
+    font-weight: bold;
+    line-height: 1;
+    margin: 0 0 $margin-lg 0;
+    text-transform: uppercase;
 }

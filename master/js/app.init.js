@@ -12,7 +12,8 @@ var App = angular.module('oshyn', [
         'cfp.loadingBar',
         'ngSanitize',
         'ngResource',
-        'ui.utils'
+        'ui.utils',
+        'mm.foundation'
     ]);
 
 App.run(["$rootScope", "$state", "$stateParams",  '$window', '$templateCache', function ($rootScope, $state, $stateParams, $window, $templateCache) {

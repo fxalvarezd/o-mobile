@@ -1,0 +1,65 @@
+ul.accordion-nav.mr-lg
+    li.accordion-item
+        label.item-title.strategy(for="strategy")
+            i.fa.fa-puzzle-piece
+            | Strategy
+        input.toggle-section(type="checkbox", id="strategy", name="strategy", checked="checked")
+        .content
+            ul.submenu
+                li.subitem
+                    .sublink(ui-sref="app.audience-segmentation") Audience Segmentation and Personalization                                                    
+                li.subitem
+                    .sublink(ui-sref="app.campaign-managment") Campaign Management
+                li.subitem
+                    .sublink(ui-sref="app.analytics") Analytics
+                li.subitem
+                    .sublink(ui-sref="app.seo") SEO
+                li.subitem
+                    .sublink(ui-sref="app.social-media") Social Media
+    li.accordion-item
+        label.item-title.design(for="design")
+            i.fa.fa-pencil
+            | Design
+        input.toggle-section(type="checkbox", id="design", name="design")
+        .content
+            ul.submenu
+                li.subitem
+                    .sublink(ui-sref="app.xxx") Digital Branding
+                li.subitem
+                    .sublink(ui-sref="app.xxx") Information Architecture
+                li.subitem
+                    .sublink(ui-sref="app.xxx") Responsive Design
+                li.subitem
+                    .sublink(ui-sref="app.xxx") Visual Design
+                li.subitem
+                    .sublink(ui-sref="app.xxx") Content Strategy
+                li.subitem
+                    .sublink(ui-sref="app.xxx") Mobile App Design
+    li.accordion-item
+        label.item-title.web(for="web")
+            i.fa.fa-globe
+            | Web
+        input.toggle-section(type="checkbox", id="web", name="web")
+        .content
+            ul.submenu
+                li.subitem
+                    .sublink(ui-sref="app.xxx") Sitecore
+                li.subitem
+                    .sublink(ui-sref="app.xxx") Episerver
+                li.subitem
+                    .sublink(ui-sref="app.xxx") Hippo
+                li.subitem
+                    .sublink(ui-sref="app.xxx") Platform and Content Migration
+                li.subitem
+                    .sublink(ui-sref="app.xxx") Ecommerce
+    li.accordion-item
+        label.item-title.mobile(for="mobile")
+            i.fa.fa-mobile
+            | Mobile
+        input.toggle-section(type="checkbox", id="mobile", name="mobile")
+        .content
+            ul.submenu
+                li.subitem
+                    .sublink(ui-sref="app.xxx") iOS
+                li.subitem
+                    .sublink(ui-sref="app.xxx") Android

@@ -42,12 +42,37 @@ function ($stateProvider, $locationProvider, $urlRouterProvider, helper) {
         .state('app.services.video', {
                 url: '/services',
                 title: 'Services',
-                templateUrl: helper.basepath('partials/services-video.html')
+                templateUrl: helper.basepath('services/services-video.html')
         })
         .state('app.services.main', {
                 url: '/services',
                 title: 'Services',
-                templateUrl: helper.basepath('partials/services-menu.html')
+                templateUrl: helper.basepath('services/services-menu.html')
+        })
+        .state('app.audience-segmentation', {
+                url: '/services/audience-segmentation',
+                title: 'Services - Audience Segmentation and Personalization',
+                templateUrl: helper.basepath('services/audience-segmentation.html')
+        })
+        .state('app.campaign-managment', {
+                url: '/services/campaign-managment',
+                title: 'Services - Campaign Management',
+                templateUrl: helper.basepath('services/campaign-managment.html')
+        })
+        .state('app.analytics', {
+                url: '/services/analytics',
+                title: 'Services - Analytics',
+                templateUrl: helper.basepath('services/analytics.html')
+        })
+        .state('app.seo', {
+                url: '/services/seo',
+                title: 'Services - SEO',
+                templateUrl: helper.basepath('services/seo.html')
+        })
+        .state('app.social-media', {
+                url: '/services/social-media',
+                title: 'Services - Social Media',
+                templateUrl: helper.basepath('services/social-media.html')
         })
         // -----------------------------------
         // Portfolio
@@ -56,6 +81,11 @@ function ($stateProvider, $locationProvider, $urlRouterProvider, helper) {
                 url: '/portfolio',
                 title: 'Portfolio',
                 templateUrl: helper.basepath('portfolio.html')
+        })
+        .state('app.gears-of-war', {
+                url: '/portfolio/gears-of-war',
+                title: 'Portfolio - Gears of War',
+                templateUrl: helper.basepath('portfolio/gears-of-war.html')
         })
         // -----------------------------------
         // Resources
