@@ -1,4 +1,4 @@
-.resources {
+.pg-resources {
     ::-webkit-input-placeholder {
        color: #fff;
     }
@@ -39,5 +39,34 @@
             &:focus {
                 background: #000;
             }
+        }
+    .post-content {
+        cursor: pointer;
+        line-height: 1.2;
+        padding: 0 $padding-xl $padding-lg;
+
+        .fa {
+            color: $link-color;
+            font-size: 24px;
+        }
+    }
+        .post-date {
+            font-size: 17px;
+            font-weight: 300;
+            padding-right: $padding-sm;
+        }
+        .post-title {
+            color: $link-color;
+            font-size: 21px;
+        }
+        .author-img {
+            @include border-radius(50%);
+        }
+        .author-text {
+            color: $subtitle-color;
+            font-size: 13px;
+            line-height: 45px;
+            padding: 0 $padding-sm;
+            text-transform: uppercase;
         }
 }

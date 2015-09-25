@@ -95,6 +95,16 @@ function ($stateProvider, $locationProvider, $urlRouterProvider, helper) {
                 title: 'Resources',
                 templateUrl: helper.basepath('resources.html')
         })
+        .state('app.post', {
+                url: '/resources/post/:id',
+                title: 'Resources - Post',
+                templateUrl: helper.basepath('resources/post.html')
+        })
+        .state('app.resource', {
+                url: '/resources/resource/:id',
+                title: 'Resources - Resource',
+                templateUrl: helper.basepath('resources/resource.html')
+        })
         // -----------------------------------
         // Partners
         // -----------------------------------

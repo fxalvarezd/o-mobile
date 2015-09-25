@@ -1,0 +1,29 @@
+.pg-resource {
+    .resource-content {
+        line-height: 1.2;
+        padding: 0 $padding-lg $padding-lg;
+
+        .fa {
+            color: $link-color;
+            font-size: 24px;
+        }
+    }
+        .resource-date {
+            font-size: 17px;
+            font-weight: 300;
+            padding-right: $padding-sm;
+        }
+        .author-img {
+            @include border-radius(50%);
+        }
+        .author-text {
+            color: $subtitle-color;
+            font-size: 13px;
+            line-height: 45px;
+            padding: 0 $padding-sm;
+            text-transform: uppercase;
+        }
+        .collapse-text-toggle {
+            color: $link-color;
+        }
+}

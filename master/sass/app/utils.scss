@@ -118,6 +118,11 @@
   box-shadow: 0 0 0 #000 !important;
 }
 
+// Fonts
+$default-font-family: 'Roboto', sans-serif;
+$secondary-font-family: 'Roboto Slab', serif;
+
+// Mixins
 @mixin border-radius($radius) {
 	-webkit-border-radius: $radius;
 	-moz-border-radius: $radius;

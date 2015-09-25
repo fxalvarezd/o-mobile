@@ -1,3 +1,10 @@
+a {
+    color: $link-color;
+
+    &:hover {
+        opacity: 0.7;
+    }
+}
 img {
     display: block;
     max-width: 100%;
@@ -34,14 +41,15 @@ img {
     .title {
         word-break: break-word;
         color: $title-color;
-        font-size: 44px;
+        font-size: 30px;
         font-weight: bold;
-        line-height: 36px;
+        line-height: 1;
         margin: 0 0 $margin-base 0;
         text-transform: uppercase;
     }
     .subtitle {
         color: $subtitle-color;
+        font-family: $secondary-font-family;
         font-size: 22px;
         font-weight: normal;
         line-height: 1;
@@ -51,7 +59,7 @@ img {
 }
 .content-title {
     color: $subtitle-color;
-    font-size: 36px;
+    font-size: 24px;
     font-weight: bold;
     line-height: 1;
     margin: 0 0 $margin-lg 0;
