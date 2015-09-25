@@ -1,0 +1,13 @@
+.pg-resource-download {
+    background: $gray-lighter;
+    height: 100%;
+
+    .content {
+        background: url(../img/dot-border-dark.png) repeat-x left top transparent;
+        padding-top: $padding-lg;
+    }
+        .small {
+            font-size: 11px;
+            font-style: italic;
+        }
+}

@@ -97,13 +97,28 @@ function ($stateProvider, $locationProvider, $urlRouterProvider, helper) {
         })
         .state('app.post', {
                 url: '/resources/post/:id',
-                title: 'Resources - Post',
+                title: 'Post',
                 templateUrl: helper.basepath('resources/post.html')
         })
         .state('app.resource', {
                 url: '/resources/resource/:id',
-                title: 'Resources - Resource',
+                title: 'Resource',
                 templateUrl: helper.basepath('resources/resource.html')
+        })
+        .state('app.resource-download', {
+                url: '/resources/resource/:id/download',
+                title: 'Resources - Download',
+                templateUrl: helper.basepath('resources/resource-download.html')
+        })
+        .state('app.resource-download.form', {
+                url: '/form',
+                title: 'Resources - Download',
+                templateUrl: helper.basepath('resources/download-form.html')
+        })
+        .state('app.resource-download.thanks', {
+                url: '/confirm',
+                title: 'Resources - Download',
+                templateUrl: helper.basepath('resources/download-thanks.html')
         })
         // -----------------------------------
         // Partners

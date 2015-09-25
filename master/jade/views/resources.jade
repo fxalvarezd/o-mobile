@@ -7,14 +7,14 @@
         h2.subtitle Lorem ipsum dolor
     .post-item(ng-repeat="post in [1,2,3,4]")
         .post-content
-            img.img-responsive.mb-lg(src="app/img/fpo/image.png", alt="xxx", ui-sref="app.post({'id': 'myid'})")
+            img.img-responsive.mb-lg(src="app/img/fpo/image.png", alt="xxx", ui-sref="app.post({'id': 'postId'})")
             .clearfix
                 .post-date.pull-left 06.30.15 
                 .pull-right.ml
                     i.fa.fa-comment
                 .pull-right
                     i.fa.fa-share-square-o
-            .post-title.mb(ui-sref="app.resource({'id': 'myid'})") Open Source Content Management
+            .post-title.mb(ui-sref="app.resource({'id': 'resourceId'})") Open Source Content Management
             .clearfix
                 img.author-img.pull-left(src="app/img/fpo/author.jpg", alt="xxx", height="45", width="45")
                 span.author-text.pull-left / Cesar Yanez / Developer
