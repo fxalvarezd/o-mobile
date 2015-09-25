@@ -1,7 +1,19 @@
 .pg-resources
     .search-box
         i.fa.fa-search
-        input.search-input(type="text", placeholder="SEARCH / FILTER")
+        span.search-hint SEARCH / FILTER
+    .search-overlay
+        .search-box
+            i.fa.fa-search
+            span.search-hint SEARCH / FILTER
+        .row
+            .large-12.columns
+                form.form
+                    label.text-label Search
+                    input.text-input(type="text")
+                    label.text-label Filter
+                    select.select-input
+                        option All Categories
     .page-heading
         h1.title We Are Here to Help
         h2.subtitle Lorem ipsum dolor

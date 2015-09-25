@@ -1,44 +1,21 @@
 .pg-resources {
-    ::-webkit-input-placeholder {
-       color: #fff;
-    }
-
-    :-moz-placeholder { /* Firefox 18- */
-       color: #fff;  
-    }
-
-    ::-moz-placeholder {  /* Firefox 19+ */
-       color: #fff;  
-    }
-
-    :-ms-input-placeholder {  
-       color: #fff;  
-    }
     .search-box {
-        position: relative;
+        background: #000;
+        color: #fff;
+        cursor: pointer;
+        overflow: hidden;
     }
         .fa-search {
-            color: #fff;
+            float: left;
             font-size: 24px;
-            left: 0;
             line-height: 60px;
-            position: absolute;
             text-align: center;
-            top: 0;
             width: 60px;
         }
-        .search-input {
-            background: #000;
-            color: #fff;
-            display: block;
+        .search-hint {
+            float: left;
             font-size: 18px;
-            height: 60px;
-            margin: 0;
-            padding: 0 $padding-base 0 60px;
-
-            &:focus {
-                background: #000;
-            }
+            line-height: 60px;
         }
     .post-content {
         cursor: pointer;
