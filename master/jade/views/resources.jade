@@ -1,19 +1,7 @@
 .pg-resources
-    .search-box
+    .search-box(style="visibility:hidden")
         i.fa.fa-search
         span.search-hint SEARCH / FILTER
-    .search-overlay
-        .search-box
-            i.fa.fa-search
-            span.search-hint SEARCH / FILTER
-        .row
-            .large-12.columns
-                form.form
-                    label.text-label Search
-                    input.text-input(type="text")
-                    label.text-label Filter
-                    select.select-input
-                        option All Categories
     .page-heading
         h1.title We Are Here to Help
         h2.subtitle Lorem ipsum dolor
@@ -31,3 +19,22 @@
                 img.author-img.pull-left(src="app/img/fpo/author.jpg", alt="xxx", height="45", width="45")
                 span.author-text.pull-left / Cesar Yanez / Developer
             hr
+    .search-overlay
+        .search-box
+            i.fa.fa-search
+            span.search-hint SEARCH / FILTER
+            .close X
+        .row
+            .large-12.columns
+                form.form
+                    label.text-label Search
+                    input.text-input(type="text")
+                    label.text-label Filter
+                    select.select-input
+                        option All Categories
+                    label.checkbox-label(for="blogPosts")
+                        input(type="checkbox", id="blogPosts")
+                        span.checkbox-label-text Blog Posts
+                    label.checkbox-label(for="whitePapers")
+                        input(type="checkbox", id="whitePapers")
+                        span.checkbox-label-text White Papers

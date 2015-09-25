@@ -1,4 +1,7 @@
 .pg-resources {
+    position: relative;
+
+    /*Search Trigger*/
     .search-box {
         background: #000;
         color: #fff;
@@ -17,6 +20,62 @@
             font-size: 18px;
             line-height: 60px;
         }
+    /*Search Overlay*/
+    .search-overlay {
+        background: rgba(0, 0, 0, 0.8);
+        bottom: 0;
+        left: 0;
+        position: fixed;
+        right: 0;
+        top: 56px;
+        z-index: 10;
+
+        .search-box {
+            background: transparent;
+            cursor: default;
+        }
+            .fa-search {
+
+            }
+            .search-hint {
+
+            }
+            .close {
+                color: #fff;
+                cursor: pointer;
+                float: right;
+                font-family: Arial;
+                font-size: 30px;
+                height: 60px;
+                line-height: 60px;
+                margin-right: $margin-base;
+                text-align: center;
+                width: 40px;
+
+                &:hover {
+                    opacity: 0.7;
+                }
+            }
+        .form {
+            background: url(../img/dot-border.png) repeat-x left top transparent;
+            padding-top: $padding-lg;
+        }
+            .text-label {
+                color: #fff;
+            }
+            .text-input {
+
+            }
+            .select-input {
+                margin-bottom: $margin-lg;
+            }
+            .checkbox-label-text {
+                color: #fff;
+                font-size: 20px;
+            }
+    }
+
+    /*Resource Listing*/
     .post-content {
         cursor: pointer;
         line-height: 1.2;
