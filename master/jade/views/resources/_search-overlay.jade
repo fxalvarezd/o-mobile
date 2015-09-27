@@ -1,0 +1,32 @@
+.search-overlay(ng-class="{hide: page.search == false}")
+    .search-box
+        i.fa.fa-search
+        span.search-hint SEARCH / FILTER
+        .close(ng-click="toggleSearch()") X
+    .row
+        .large-12.columns
+            form.form
+                div
+                label.text-label Search
+                .search-cont
+                    input.text-input(type="text")
+                    button.fa.fa-search
+                label.text-label Filter
+                select.select-input.mb-xl
+                    option All Categories
+                    option General
+                    option Marketing - Design
+                    option Marketing - Digital Marketing Software - CMS
+                    option Marketing - Mobile
+                    option Marketing - Social
+                    option Marketing - Strategy
+                    option News &amp; Events
+                    option Technology - CMS
+                    option Technology - Mobile
+                    option Technology - Software Development
+                label.checkbox-label(for="blogPosts")
+                    input(type="checkbox", id="blogPosts")
+                    span.checkbox-label-text Blog Posts
+                label.checkbox-label(for="whitePapers")
+                    input(type="checkbox", id="whitePapers")
+                    span.checkbox-label-text White Papers

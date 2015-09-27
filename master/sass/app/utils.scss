@@ -122,6 +122,11 @@
 $default-font-family: 'Roboto', sans-serif;
 $secondary-font-family: 'Roboto Slab', serif;
 
+// Visibility
+.vhidden {
+	visibility: hidden;
+}
+
 // Mixins
 @mixin border-radius($radius) {
 	-webkit-border-radius: $radius;

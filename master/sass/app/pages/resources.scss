@@ -34,12 +34,6 @@
             background: transparent;
             cursor: default;
         }
-            .fa-search {
-
-            }
-            .search-hint {
-
-            }
             .close {
                 color: #fff;
                 cursor: pointer;
@@ -63,12 +57,27 @@
             .text-label {
                 color: #fff;
             }
-            .text-input {
+            .search-cont {
+                padding-right: 51px;
+                position: relative;
 
+                .fa-search {
+                    background: $link-color;
+                    border: 0;
+                    color: #fff;
+                    height: 51px;
+                    line-height: 51px;
+                    padding: 0;
+                    position: absolute;
+                    right: 0;
+                    text-align: center;
+                    top: 0;
+                    width: 51px;
+                }
             }
-            .select-input {
-                margin-bottom: $margin-lg;
-            }
+                .select-input {
+                    margin-bottom: $margin-lg;
+                }
             .checkbox-label-text {
                 color: #fff;
                 font-size: 20px;
