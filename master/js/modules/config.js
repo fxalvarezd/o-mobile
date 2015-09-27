@@ -82,10 +82,10 @@ function ($stateProvider, $locationProvider, $urlRouterProvider, helper) {
                 title: 'Portfolio',
                 templateUrl: helper.basepath('portfolio.html')
         })
-        .state('app.gears-of-war', {
-                url: '/portfolio/gears-of-war',
-                title: 'Portfolio - Gears of War',
-                templateUrl: helper.basepath('portfolio/gears-of-war.html')
+        .state('app.client', {
+                url: '/portfolio/client',
+                title: 'Portfolio - Client',
+                templateUrl: helper.basepath('portfolio/client.html')
         })
         // -----------------------------------
         // Resources
@@ -128,6 +128,11 @@ function ($stateProvider, $locationProvider, $urlRouterProvider, helper) {
                 title: 'Partners',
                 templateUrl: helper.basepath('partners.html')
         })
+        .state('app.partner', {
+                url: '/partners/partner',
+                title: 'Partner',
+                templateUrl: helper.basepath('partners/partner.html')
+        })
         // -----------------------------------
         // Who We Are
         // -----------------------------------
@@ -135,6 +140,11 @@ function ($stateProvider, $locationProvider, $urlRouterProvider, helper) {
                 url: '/who',
                 title: 'Who We Are',
                 templateUrl: helper.basepath('who.html')
+        })
+        .state('app.who-detail', {
+                url: '/who/:id',
+                title: 'Who We Are',
+                templateUrl: helper.basepath('who/who-detail.html')
         })
         // -----------------------------------
         // Contact Us

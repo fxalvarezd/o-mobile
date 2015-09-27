@@ -1,0 +1,16 @@
+.pg-contact {
+    background-color: #3c8aaa;
+    color: #fff;
+
+    .title,
+    .subtitle,
+    .phone-link {
+        color: #fff;
+    }
+    .phone-link {
+        text-decoration: underline;
+    }
+    .phone {
+        font-size: 18px;
+    }
+}
