@@ -9,10 +9,11 @@ function ($stateProvider, $locationProvider, $urlRouterProvider, helper) {
 
     // Set the following to true to enable the HTML5 Mode
     // You may have to set <base> tag in index and a routing configuration in your server
-    $locationProvider.html5Mode(false);
+    $locationProvider.html5Mode(true);
+    $locationProvider.hashPrefix('!');
 
     // default route
-    $urlRouterProvider.otherwise('/homepage');
+    // $urlRouterProvider.otherwise('/');
 
     // -----------------------------------   
     // Application Routes
@@ -28,7 +29,7 @@ function ($stateProvider, $locationProvider, $urlRouterProvider, helper) {
         // Homepage
         // -----------------------------------
         .state('app.homepage', {
-                url: '/homepage',
+                url: '/',
                 title: 'Oshyn Inc.',
                 templateUrl: helper.basepath('homepage.html')
         })
