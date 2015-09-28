@@ -6,15 +6,8 @@ var args        = require('yargs').argv,
     gulpsync    = $.sync(gulp),
     PluginError = $.util.PluginError;
 
-// production mode (see build task)
 var isProduction = false;
-// styles sourcemaps
 var useSourceMaps = false;
-
-// Switch to sass mode. 
-// Example:
-//    gulp --usesass
-//var useSass = args.usesass;
 var useSass = true;
 
 // ignore everything that begins with underscore
@@ -34,7 +27,6 @@ if(useSass) {
     log('Using SASS stylesheets...');
     paths.styles = 'sass/';
 }
-
 
 // VENDOR CONFIG
 var vendor = {
@@ -103,47 +95,43 @@ var compassOpts = {
     image: 'app/img'
 };
 
-//---------------
+//*******************************************************************
 // TASKS
-//---------------
-
-
+//*******************************************************************
 // JS APP
 gulp.task('scripts:app', function() {
-        log('Building scripts..');
-        // Minify and copy all JavaScript (except vendor scripts)
-        return gulp.src(source.scripts)
-                .pipe($.jsvalidate())
-                .on('error', handleError)
-                .pipe( $.if( useSourceMaps, $.sourcemaps.init() ))
-                .pipe($.concat( 'app.js' ))
-                .pipe($.ngAnnotate())
-                .on('error', handleError)
-                .pipe( $.if(isProduction, $.uglify({preserveComments:'some'}) ))
-                .on('error', handleError)
-                .pipe( $.if( useSourceMaps, $.sourcemaps.write() ))
-                .pipe(gulp.dest(build.scripts));
+    log('Building scripts..');
+    // Minify and copy all JavaScript (except vendor scripts)
+    return gulp.src(source.scripts)
+            .pipe($.jsvalidate())
+            .on('error', handleError)
+            .pipe( $.if( useSourceMaps, $.sourcemaps.init() ))
+            .pipe($.concat( 'app.js' ))
+            .pipe($.ngAnnotate())
+            .on('error', handleError)
+            .pipe( $.if(isProduction, $.uglify({preserveComments:'some'}) ))
+            .on('error', handleError)
+            .pipe( $.if( useSourceMaps, $.sourcemaps.write() ))
+            .pipe(gulp.dest(build.scripts));
 });
-
 
 // VENDOR BUILD
 gulp.task('vendor', gulpsync.sync(['vendor:base', 'vendor:app']) );
 
 // Build the base script to start the application from vendor assets
 gulp.task('vendor:base', function() {
-        log('Copying base vendor assets..');
-        return gulp.src(vendor.base.source)
-                .pipe($.expectFile(vendor.base.source))
-                .pipe($.if( isProduction, $.uglify() ))
-                .pipe($.concat(vendor.base.name))
-                .pipe(gulp.dest(vendor.base.dest))
-                ;
+    log('Copying base vendor assets..');
+    return gulp.src(vendor.base.source)
+            .pipe($.expectFile(vendor.base.source))
+            .pipe($.if( isProduction, $.uglify() ))
+            .pipe($.concat(vendor.base.name))
+            .pipe(gulp.dest(vendor.base.dest))
+            ;
 });
 
 // copy file from bower folder into the app vendor folder
 gulp.task('vendor:app', function() {
     log('Copying vendor assets..');
-
     var jsFilter = $.filter('**/*.js');
     var cssFilter = $.filter('**/*.css');
 
@@ -156,49 +144,47 @@ gulp.task('vendor:app', function() {
             .pipe($.if( isProduction, $.minifyCss() ))
             .pipe(cssFilter.restore())
             .pipe( gulp.dest(vendor.app.dest) );
-
 });
 
 // APP LESS
 gulp.task('styles:app', function() {
-        log('Building application styles..');
-        return gulp.src(source.styles.app)
-                .pipe( $.if( useSourceMaps, $.sourcemaps.init() ))
-                .pipe( useSass ? $.compass(compassOpts) : $.less() )
-                .on('error', handleError)
-                .pipe( $.if( isProduction, $.minifyCss() ))
-                .pipe( $.if( useSourceMaps, $.sourcemaps.write() ))
-                .pipe(gulp.dest(build.styles));
+    log('Building application styles..');
+    return gulp.src(source.styles.app)
+            .pipe( $.if( useSourceMaps, $.sourcemaps.init() ))
+            .pipe( useSass ? $.compass(compassOpts) : $.less() )
+            .on('error', handleError)
+            .pipe( $.if( isProduction, $.minifyCss() ))
+            .pipe( $.if( useSourceMaps, $.sourcemaps.write() ))
+            .pipe(gulp.dest(build.styles));
 });
 
 // JADE
 gulp.task('templates:index', function() {
-        log('Building index..');
-        return gulp.src(source.templates.index)
-                .pipe($.changed(build.templates.index, { extension: '.html' }))
-                .pipe( $.jade() )
-                .on('error', handleError)
-                .pipe($.htmlPrettify( prettifyOpts ))
-                .pipe(gulp.dest(build.templates.index))
-                ;
+    log('Building index..');
+    return gulp.src(source.templates.index)
+            .pipe($.changed(build.templates.index, { extension: '.html' }))
+            .pipe( $.jade() )
+            .on('error', handleError)
+            .pipe($.htmlPrettify( prettifyOpts ))
+            .pipe(gulp.dest(build.templates.index))
+            ;
 });
 
 // JADE
 gulp.task('templates:views', function() {
-        log('Building views..');
-        return gulp.src(source.templates.views)
-                .pipe( $.if( !isProduction, $.changed(build.templates.views, { extension: '.html' }) ))
-                .pipe($.jade())
-                .on('error', handleError)
-                .pipe($.htmlPrettify( prettifyOpts ))
-                .pipe(gulp.dest(build.templates.views))
-                ;
+    log('Building views..');
+    return gulp.src(source.templates.views)
+            .pipe( $.if( !isProduction, $.changed(build.templates.views, { extension: '.html' }) ))
+            .pipe($.jade())
+            .on('error', handleError)
+            .pipe($.htmlPrettify( prettifyOpts ))
+            .pipe(gulp.dest(build.templates.views))
+            ;
 });
 
-//---------------
+//******************************************************************
 // WATCH
-//---------------
-
+//******************************************************************
 // Rerun the task when a file changes
 gulp.task('watch', function() {
     log('Starting watch and LiveReload..');
@@ -227,19 +213,13 @@ gulp.task('watch', function() {
                 $.livereload.changed( event.path );
             }, livereloadDelay);
         });
-
 });
 
-//---------------
+//******************************************************************
 // MAIN TASKS
-//---------------
-
+//******************************************************************
 // build for production (minify)
-gulp.task('build', gulpsync.sync([
-                    'prod',
-                    'vendor',
-                    'assets'
-                ]));
+gulp.task('build', gulpsync.sync(['prod', 'vendor', 'assets']));
 
 gulp.task('prod', function() { 
     log('Starting production build...');
@@ -251,24 +231,13 @@ gulp.task('sourcemaps', ['usesources', 'default']);
 gulp.task('usesources', function(){ useSourceMaps = true; });
 
 // default (no minify)
-gulp.task('default', gulpsync.sync([
-                    'vendor',
-                    'assets',
-                    'watch'
-                ]), function(){
-
+gulp.task('default', gulpsync.sync(['vendor', 'assets', 'watch']), function(){
     log('************');
     log('* All Done * You can start editing your code, LiveReload will update your browser after any change..');
     log('************');
-
 });
 
-gulp.task('assets',[
-                    'scripts:app',
-                    'styles:app',
-                    'templates:index',
-                    'templates:views'
-                ]);
+gulp.task('assets', ['scripts:app', 'styles:app', 'templates:index', 'templates:views']);
 
 // Error handler
 function handleError(err) {
